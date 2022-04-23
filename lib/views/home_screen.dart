@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../widgets/navigation_drawer.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -11,6 +12,7 @@ class HomeScreen extends StatelessWidget {
         length: 2,
         child: Scaffold(
           backgroundColor: Colors.grey.shade100,
+          drawer: const NavigationDrawer(),
           appBar: AppBar(
            actions: [
              IconButton(
