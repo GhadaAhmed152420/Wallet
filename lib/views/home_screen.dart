@@ -1,0 +1,51 @@
+import 'package:flutter/material.dart';
+
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Directionality(
+      textDirection: TextDirection.rtl,
+      child: DefaultTabController(
+        length: 2,
+        child: Scaffold(
+          backgroundColor: Colors.grey.shade100,
+          appBar: AppBar(
+           actions: [
+             IconButton(
+             onPressed: (){},
+             icon: const Icon(Icons.notifications),
+           ),
+           ],
+            flexibleSpace: Container(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(colors: [
+                  Colors.greenAccent,
+                  Colors.greenAccent.shade400,
+                ], begin: Alignment.bottomRight, end: Alignment.topLeft),
+              ),
+            ),
+            title: const Text('الصفحة الرئيسة'),
+            elevation: 4,
+            bottom: const TabBar(
+              isScrollable: true,
+              indicatorColor: Colors.white,
+              indicatorWeight: 4,
+              tabs: [
+                Tab(text: 'الحسابات'),
+                Tab(text: 'BUDGETS & GOALS'),
+              ],
+            ),
+          ),
+          body: Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
