@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../widgets/budgetsAndGoalsTab.dart';
 import '../widgets/navigation_drawer.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -43,7 +44,11 @@ class HomeScreen extends StatelessWidget {
           body: Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-
+              Expanded(
+                child: TabBarView(
+                  children: [budgetsAndGoalsTab()],
+                ),
+              ),
             ],
           ),
         ),
