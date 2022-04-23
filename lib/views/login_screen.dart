@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:wallet/views/register_screen.dart';
 
+import 'home_screen.dart';
+
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
 
@@ -74,7 +76,10 @@ class LoginScreen extends StatelessWidget {
               ),
               child: MaterialButton(
                 onPressed: () {
-
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const HomeScreen()));
                 },
                 child: const Text(
                   'تسجيل الدخول',

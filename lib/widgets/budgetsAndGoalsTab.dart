@@ -41,9 +41,9 @@ Widget budgetsAndGoalsTab() => Container(
                             SizedBox(height: 5.0,),
                             Align(
                               alignment: Alignment.bottomLeft,
-                              child: Text('.Start with budgets to have an efficient overview of your spending limits ',
+                              child: Text('Start with budgets to have an efficient overview of your spending limits',
                                 style: TextStyle(
-                                  fontSize: 9.0,
+                                  fontSize: 8.0,
                                   color: Colors.grey,
                                 ),),
                             ),
@@ -95,7 +95,7 @@ Widget budgetsAndGoalsTab() => Container(
                               alignment: Alignment.bottomLeft,
                               child: Text('.Set your first goal and have a quick overview of your progress',
                                 style: TextStyle(
-                                  fontSize: 9.0,
+                                  fontSize: 8.0,
                                   color: Colors.grey,
                                 ),),
                             ),

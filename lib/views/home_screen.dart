@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wallet/widgets/calculationsTab.dart';
 import '../widgets/budgetsAndGoalsTab.dart';
 import '../widgets/navigation_drawer.dart';
 
@@ -46,7 +47,7 @@ class HomeScreen extends StatelessWidget {
             children: [
               Expanded(
                 child: TabBarView(
-                  children: [budgetsAndGoalsTab()],
+                  children: [calculationsTab(), budgetsAndGoalsTab()],
                 ),
               ),
             ],
