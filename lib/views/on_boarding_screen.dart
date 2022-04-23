@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wallet/views/register_screen.dart';
 import 'package:wallet/widgets/build_boarding_item.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../models/boarding_model.dart';
@@ -110,6 +111,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   side: BorderSide(color: Colors.blue.shade700, width: 1.5,),
                 ),
                 onPressed: () {
+                  Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => const RegisterScreen()), (route) => false);
                 },
                 child: Text(
                   'ابدأ الان',
