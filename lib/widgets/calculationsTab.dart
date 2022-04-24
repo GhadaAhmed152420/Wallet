@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:wallet/widgets/skelton.dart';
+import 'package:pie_chart/pie_chart.dart';
 
 Widget calculationsTab() => SingleChildScrollView(
       child: Column(
@@ -157,7 +159,7 @@ Widget calculationsTab() => SingleChildScrollView(
             padding: const EdgeInsets.all(8.0),
             child: Container(
               width: double.infinity,
-              height: 300,
+              height: 400,
               decoration: BoxDecoration(
                 color: Colors.white,
                 boxShadow: [
@@ -201,11 +203,45 @@ Widget calculationsTab() => SingleChildScrollView(
                   const Padding(
                     padding: EdgeInsets.only(right: 8.0),
                     child: Text(
-                      '.ج.م.',
+                      '٣٠٠,٠٠ ج.م.',
                       style: TextStyle(
                         fontSize: 18.0,
                       ),
                     ),
+                  ),
+                  const SizedBox(
+                    height: 20.0,
+                  ),
+                  PieChart(
+                    chartType: ChartType.ring,
+                    ringStrokeWidth: 32,
+                    chartLegendSpacing: 32,
+                    chartRadius: 150,
+                    colorList: const [
+                      Colors.red,
+                      Colors.grey,
+                      Colors.lightBlue,
+                      Colors.lightGreen
+                    ],
+                    dataMap: const {
+                      'طعام ومشروبات': 20,
+                      'وسائل النقل': 16,
+                      'تسوق': 36,
+                      'مصاريف ومالية': 26
+                    },
+                    centerText: 'الكل ٣٠٠ ج.م ',
+                    chartValuesOptions: const ChartValuesOptions(
+                      showChartValues: false,
+                      showChartValueBackground: false,
+                    ),
+                    legendOptions: const LegendOptions(
+                        showLegendsInRow: true,
+                        legendPosition: LegendPosition.bottom,
+                        legendShape: BoxShape.circle,
+                        legendTextStyle: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 10.0,
+                        )),
                   ),
                   const Spacer(),
                   Padding(
@@ -225,7 +261,7 @@ Widget calculationsTab() => SingleChildScrollView(
             padding: const EdgeInsets.all(8.0),
             child: Container(
               width: double.infinity,
-              height: 300,
+              height: 361,
               decoration: BoxDecoration(
                 color: Colors.white,
                 boxShadow: [
@@ -275,10 +311,85 @@ Widget calculationsTab() => SingleChildScrollView(
                       ),
                     ),
                   ),
-                  Column(
-                    children: [
-
-                    ],
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Row(
+                          children: [
+                            Expanded(
+                              child: Column(
+                                children: [
+                                  Row(
+                                    children: const [
+                                      Skelton(width: 60.0, height: 20.0),
+                                      Spacer(),
+                                      Skelton(width: 100.0, height: 20.0),
+                                    ],
+                                  ),
+                                  Row(
+                                    children: const [
+                                      Skelton(width: 80.0),
+                                      Spacer(),
+                                      Skelton(width: 80.0),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                            CircleAvatar(
+                              radius: 40,
+                              backgroundColor: HexColor('E9E9E8'),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Divider(
+                      thickness: 0.5,
+                      height: 0.5,
+                      color: HexColor('E9E9E8'),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Row(
+                          children: [
+                            Expanded(
+                              child: Column(
+                                children: [
+                                  Row(
+                                    children: const [
+                                      Skelton(width: 60.0, height: 20.0),
+                                      Spacer(),
+                                      Skelton(width: 100.0, height: 20.0),
+                                    ],
+                                  ),
+                                  Row(
+                                    children: const [
+                                      Skelton(width: 80.0),
+                                      Spacer(),
+                                      Skelton(width: 80.0),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                            CircleAvatar(
+                              radius: 40,
+                              backgroundColor: HexColor('E9E9E8'),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                   const Spacer(),
                   Padding(
