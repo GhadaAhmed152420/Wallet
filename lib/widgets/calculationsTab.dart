@@ -1,7 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:wallet/models/listview_model.dart';
+import 'package:wallet/widgets/listview_item.dart';
 import 'package:wallet/widgets/skelton.dart';
 import 'package:pie_chart/pie_chart.dart';
+
+
+List<ListViewModel> items = [
+  ListViewModel(image: 'assets/images/tax.png', title: 'الضرائب', desc: 'نقد', day: 'اليوم',cost: '-٨٠،٠٠ ج.م.'),
+  ListViewModel(image: 'assets/images/t-shirt.png', title: 'الملابس والاحذيه', desc: 'نقد', day: 'اليوم',cost: '-١١٠،٠٠ ج.م.'),
+  ListViewModel(image: 'assets/images/cutlery.png', title: 'مطعم الوجبات السريعه', desc: 'نقد', day: 'اليوم',cost: '-٦٠،٠٠ ج.م.'),
+  ListViewModel(image: 'assets/images/school-bus.png', title: 'وسائل النقل', desc: 'نقد', day: 'اليوم',cost: '-٥٠،٠٠ ج.م.'),
+];
 
 Widget calculationsTab() => SingleChildScrollView(
       child: Column(
@@ -252,7 +262,7 @@ Widget calculationsTab() => SingleChildScrollView(
                       color: HexColor('D3D3D3'),
                     ),
                   ),
-                  TextButton(onPressed: () {}, child: const Text('اضافه سجل')),
+                  TextButton(onPressed: () {}, child: const Text('اظهار المزيد')),
                 ],
               ),
             ),
@@ -261,7 +271,7 @@ Widget calculationsTab() => SingleChildScrollView(
             padding: const EdgeInsets.all(8.0),
             child: Container(
               width: double.infinity,
-              height: 361,
+              height: 408,
               decoration: BoxDecoration(
                 color: Colors.white,
                 boxShadow: [
@@ -302,15 +312,75 @@ Widget calculationsTab() => SingleChildScrollView(
                       ),
                     ),
                   ),
-                  const Padding(
-                    padding: EdgeInsets.only(right: 8.0),
-                    child: Text(
-                      '.ج.م.',
-                      style: TextStyle(
-                        fontSize: 18.0,
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Container(
+                      height: 270,
+                      width: double .infinity,
+                      child: Column(
+                        children: [
+                          Expanded(
+                            child: ListView.builder(
+                              physics: const BouncingScrollPhysics(),
+                              itemBuilder: (context, index) =>
+                                  listViewItem(items[index]),
+                              itemCount: items.length,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ),
+                  const Spacer(),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Divider(
+                      thickness: 0.5,
+                      height: 0.5,
+                      color: HexColor('D3D3D3'),
+                    ),
+                  ),
+                  TextButton(onPressed: () {}, child: const Text('اظهار المزيد')),
+                ],
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              width: double.infinity,
+              height: 350,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.5),
+                    blurRadius: 7,
+                    offset: const Offset(0, 3), // Shadow position
+                  ),
+                ],
+                borderRadius: BorderRadius.circular(6.0),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      children: const [
+                        Text('الدفعات المخططة القادمة'),
+                        SizedBox(
+                          height: 10.0,
+                        ),
+                        Spacer(),
+                        Icon(
+                          Icons.more_vert,
+                          color: Colors.grey,
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 20.0,),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Column(
@@ -400,7 +470,7 @@ Widget calculationsTab() => SingleChildScrollView(
                       color: HexColor('D3D3D3'),
                     ),
                   ),
-                  TextButton(onPressed: () {}, child: const Text('اضافه سجل')),
+                  TextButton(onPressed: () {}, child: const Text('اظهار المزيد')),
                 ],
               ),
             ),
