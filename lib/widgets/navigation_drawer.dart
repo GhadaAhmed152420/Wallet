@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hexcolor/hexcolor.dart';
 import '../views/login_screen.dart';
 import 'drawer_item.dart';
 import 'nav_header.dart';
@@ -32,13 +33,13 @@ class NavigationDrawer extends StatelessWidget {
                 height: 15
                 ,
               ),
-              const Padding(
-                padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
                 child: Divider(
-                  thickness: 1,
-                  height: 1,
-                  color: Colors.grey,
-                ),
+                thickness: 0.5,
+                height: 0.5,
+                color: HexColor('D3D3D3'),
+              ),
               ),
               const SizedBox(
                 height: 15
@@ -69,12 +70,12 @@ class NavigationDrawer extends StatelessWidget {
                 height: 15
                 ,
               ),
-              const Padding(
-                padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
                 child: Divider(
-                  thickness: 1,
-                  height: 1,
-                  color: Colors.grey,
+                  thickness: 0.5,
+                  height: 0.5,
+                  color: HexColor('D3D3D3'),
                 ),
               ),
               const SizedBox(
@@ -118,12 +119,12 @@ class NavigationDrawer extends StatelessWidget {
                 height: 15
                 ,
               ),
-              const Padding(
-                padding: EdgeInsets.symmetric(vertical: 10.0,horizontal: 10.0),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 10.0,horizontal: 10.0),
                 child: Divider(
-                  thickness: 1,
-                  height: 1,
-                  color: Colors.grey,
+                  thickness: 0.5,
+                  height: 0.5,
+                  color: HexColor('D3D3D3'),
                 ),
               ),
               const SizedBox(
@@ -239,12 +240,12 @@ class NavigationDrawer extends StatelessWidget {
                 height: 15
                 ,
               ),
-              const Padding(
-                padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
+               Padding(
+                padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
                 child: Divider(
-                  thickness: 1,
-                  height: 1,
-                  color: Colors.grey,
+                  thickness: 0.5,
+                  height: 0.5,
+                  color: HexColor('D3D3D3'),
                 ),
               ),
               const SizedBox(
