@@ -22,7 +22,7 @@ class LoginScreen extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
-        child: Column(
+        child: ListView(
           children: [
             Image.asset(
               "assets/images/mail.png",
@@ -32,10 +32,12 @@ class LoginScreen extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-            const Text(
-              "أهلا بك من جديد!",
-              style: TextStyle(fontSize: 24),
-              textDirection: TextDirection.rtl,
+            const Center(
+              child: Text(
+                "أهلا بك من جديد!",
+                style: TextStyle(fontSize: 24),
+                textDirection: TextDirection.rtl,
+              ),
             ),
             const SizedBox(
               height: 10,
@@ -60,6 +62,7 @@ class LoginScreen extends StatelessWidget {
                     decoration: const InputDecoration(
                       hintText: 'على الاقل ٦ أحرف ',
                       border: OutlineInputBorder(),
+                      suffixIcon: Icon(Icons.remove_red_eye),
                     ),
                   ),
                   const SizedBox(
@@ -101,7 +104,9 @@ class LoginScreen extends StatelessWidget {
                 'هل نسيت كلمه السر؟',
               ),
             ),
-            const Spacer(),
+            const SizedBox(
+              height: 120,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
