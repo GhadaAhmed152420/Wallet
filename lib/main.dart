@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:wallet/views/splash_screen.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
           elevation: 0.0,
         ),
       ),
-
+      home: const SplashScreen(),
     );
   }
 }
